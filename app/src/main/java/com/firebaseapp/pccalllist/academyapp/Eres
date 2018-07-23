@@ -6,3 +6,12 @@ android:tint="?colorAccent"
         android:layout_height="wrap_content"
         app:backgroundTint="@color/colorAccent"
         android:text="E-MAIL" />
+
+
+
+sendIntent.setAction(Intent.ACTION_SEND);
+sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
+sendIntent.setType("text/plain");
+ if (sendIntent.resolveActivity(getPackageManager()) != null) {
+       startActivity(sendIntent);
+   }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AcademyApp</string>
+    <string name="chooser_title">Выберите приложение для отправки e-mail</string>
 </resources>

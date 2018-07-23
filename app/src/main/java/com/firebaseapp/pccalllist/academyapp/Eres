@@ -1,0 +1,8 @@
+android:tint="?colorAccent"
+<androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_email"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/colorAccent"
+        android:text="E-MAIL" />

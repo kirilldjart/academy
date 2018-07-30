@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_email).setOnClickListener(view -> {
 
             Intent sendIntent=new Intent();
-            sendIntent.setAction(Intent.ACTION_SENDTO);
+            sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.putExtra(Intent.EXTRA_TEXT, editText.getText().toString());
-            sendIntent.putExtra(Intent.EXTRA_EMAIL, "drobushevsky_kirill@mail.ru");
+            sendIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"drobushevsky_kirill@mail.ru"});
             sendIntent.putExtra(Intent.EXTRA_SUBJECT, "The message I wrote on my app");
             //sendIntent.putExtra(Intent.EXTRA_STREAM, attachment);
             sendIntent.setType("text/plain");
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                  String title = getResources().getString(R.string.chooser_title);
             // Create intent to show the chooser dialog
             Intent chooser = Intent.createChooser(sendIntent, title);
-
+            //Log.e(TAG, getString(R.string.email_error), e);
 
             if (sendIntent.resolveActivity(getPackageManager()) != null) {
                 startActivity(chooser);
